@@ -1,5 +1,6 @@
 #Libaries
 import cflib.crtp
+from cflib.positioning.motion_commander import MotionCommander
 from cflib.crazyflie import Crazyflie
 from cflib.crazyflie.log import LogConfig
 import PySimpleGUI as sg
