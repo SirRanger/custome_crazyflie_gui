@@ -13,8 +13,8 @@ import hover
 init(autoreset=True)
 cflib.crtp.init_drivers()
 #Pfad für Bilder
-with open("Images_Pfad.txt", "r") as ImagesPfad:
-    for path in ImagesPfad:
+with open("config.txt", "r") as f:
+    for path in f:
        image_path = path
        print(path)
 #variable für gescannte drohnen
@@ -41,7 +41,8 @@ layout = [
      sg.Button("movement_key_4",button_color = "white",image_filename=image_path+"\\drohne_fliegen.png",pad=((0,0),3),key="space"),
      sg.Button("movement_key_5",button_color = "white",image_filename=image_path+"\\Pfeil_Rechts.png", pad=((10,10),3),key="d")],
     [sg.Button("movement_key_3",button_color = "white",image_filename=image_path+"\\Pfeil_Unten.png", pad=((65,65),3),key="s")],
-    [sg.Button("Exit",button_color="red",pad=((000,000),3)),sg.Button("Clear terminal logs",button_color = "red")]
+    [sg.Button("exit",button_color="red",pad=((000,000),3)),
+     sg.Button("clear",button_color = "red")]
 ]
 
 #Creating GUI and layout
@@ -89,9 +90,9 @@ while True:
         print(f'{Fore.GREEN}"SPACE" Key Pressed')
     if event == "Start": #Event für den Start button
         print(f'{Fore.YELLOW}Starting drone / DEVICE ID:  ...')
-    if event == "Clear terminal logs":
+    if event == "clear":
         os.system("clear || cls")
-    if event == "Exit": #Event für den Exit button
+    if event == "exit": #Event für den Exit button
         print(f'{Fore.RED}Exiting GUI...')
         stop_hover.set()
         break

@@ -37,7 +37,7 @@ from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
 from cflib.utils import uri_helper
 from cflib.positioning.motion_commander import MotionCommander
 from queue import Queue
-from gui import position
+
 
 
 # Only output errors from the logging framework
